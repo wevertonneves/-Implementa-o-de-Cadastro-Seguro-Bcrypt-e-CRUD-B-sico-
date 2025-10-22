@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro Seguro - Trabalho Faculdade</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .container {
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 20px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        padding: 40px;
+        width: 100%;
+        max-width: 450px;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .logo {
+        font-size: 2.5rem;
+        color: #667eea;
+        margin-bottom: 10px;
+      }
+
+      h1 {
+        color: #333;
+        font-size: 2rem;
+        margin-bottom: 10px;
+        font-weight: 600;
+      }
+
+      .subtitle {
+        color: #666;
+        font-size: 1rem;
+      }
+
+      .form-group {
+        margin-bottom: 25px;
+        position: relative;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+        color: #333;
+        font-weight: 500;
+        font-size: 0.9rem;
+      }
+
+      input {
+        width: 100%;
+        padding: 15px;
+        border: 2px solid #e1e5e9;
+        border-radius: 12px;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        background: #f8f9fa;
+      }
+
+      input:focus {
+        outline: none;
+        border-color: #667eea;
+        background: white;
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+      }
+
+      .password-strength {
+        height: 4px;
+        background: #e1e5e9;
+        border-radius: 2px;
+        margin-top: 5px;
+        overflow: hidden;
+      }
+
+      .strength-bar {
+        height: 100%;
+        width: 0%;
+        transition: all 0.3s ease;
+        border-radius: 2px;
+      }
+
+      .weak {
+        background: #ff4757;
+        width: 33%;
+      }
+      .medium {
+        background: #ffa502;
+        width: 66%;
+      }
+      .strong {
+        background: #2ed573;
+        width: 100%;
+      }
+
+      .btn {
+        width: 100%;
+        padding: 15px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border: none;
+        border-radius: 12px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+      }
+
+      .btn:active {
+        transform: translateY(0);
+      }
+
+      .message {
+        padding: 15px;
+        border-radius: 12px;
+        margin-top: 20px;
+        text-align: center;
+        font-weight: 500;
+        display: none;
+      }
+
+      .success {
+        background: #d4edda;
+        color: #155724;
+        border: 1px solid #c3e6cb;
+        display: block;
+      }
+
+      .error {
+        background: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+        display: block;
+      }
+
+      .security-info {
+        background: #e3f2fd;
+        border: 1px solid #bbdefb;
+        border-radius: 12px;
+        padding: 15px;
+        margin-top: 30px;
+        font-size: 0.85rem;
+        color: #1565c0;
+      }
+
+      .security-info h3 {
+        margin-bottom: 10px;
+        color: #1976d2;
+        font-size: 1rem;
+      }
+
+      .features {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 30px;
+        text-align: center;
+      }
+
+      .feature {
+        padding: 15px;
+      }
+
+      .feature-icon {
+        font-size: 2rem;
+        margin-bottom: 10px;
+        color: #667eea;
+      }
+
+      .feature-text {
+        font-size: 0.8rem;
+        color: #666;
+      }
+
+      @media (max-width: 480px) {
+        .container {
+          padding: 30px 20px;
+        }
+
+        h1 {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="logo">🔒</div>
+        <h1>Cadastro Seguro</h1>
+        <p class="subtitle">Trabalho de Segurança e Persistência de Dados</p>
+      </div>
+
+      <form id="registerForm">
+        <div class="form-group">
+          <label for="username">Nome de Usuário</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            required
+            placeholder="Digite seu usuário"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            placeholder="seu@email.com"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Senha</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            required
+            placeholder="Mínimo 6 caracteres"
+            minlength="6"
+          />
+          <div class="password-strength">
+            <div class="strength-bar" id="strengthBar"></div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn">Cadastrar Usuário</button>
+      </form>
+
+      <div id="message" class="message"></div>
+
+      <div class="security-info">
+        <h3>🔐 Segurança em Primeiro Lugar</h3>
+        <p>
+          Suas senhas são criptografadas usando BCrypt antes do armazenamento,
+          garantindo máxima segurança.
+        </p>
+      </div>
+
+      <div class="features">
+        <div class="feature">
+          <div class="feature-icon">⚡</div>
+          <div class="feature-text">Hash BCrypt</div>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🛡️</div>
+          <div class="feature-text">Senhas Seguras</div>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🚀</div>
+          <div class="feature-text">Performance</div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const BACKEND_URL = "http://localhost:3000";
+
+      document
+        .getElementById("registerForm")
+        .addEventListener("submit", async function (e) {
+          e.preventDefault();
+
+          const formData = new FormData(this);
+          const data = {
+            username: formData.get("username"),
+            email: formData.get("email"),
+            password: formData.get("password"),
+          };
+
+          const button = this.querySelector("button");
+          const originalText = button.textContent;
+          button.textContent = "Cadastrando...";
+          button.disabled = true;
+
+          try {
+            // Agora aponta diretamente para o backend
+            const response = await fetch(`${BACKEND_URL}/register`, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(data),
+            });
+
+            const result = await response.json();
+
+            const messageDiv = document.getElementById("message");
+            messageDiv.className = "message";
+            messageDiv.textContent = result.message;
+
+            if (result.success) {
+              messageDiv.classList.add("success");
+              document.getElementById("registerForm").reset();
+              document.getElementById("strengthBar").className = "strength-bar";
+            } else {
+              messageDiv.classList.add("error");
+            }
+
+            messageDiv.style.display = "block";
+          } catch (error) {
+            console.error("Erro:", error);
+            const messageDiv = document.getElementById("message");
+            messageDiv.className = "message error";
+            messageDiv.textContent = "Erro de conexão com o backend";
+            messageDiv.style.display = "block";
+          } finally {
+            button.textContent = originalText;
+            button.disabled = false;
+          }
+        });
+
+      // ... resto do código do validador de senha
+    </script>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "username": "weverton",
+    "email": "produtora@rbformaturas.com.br",
+    "passwordHash": "$2a$10$fe1JEwzmyTqlV1yWAC3szeBgtTvSvifI8ZKKQelwM3KnQ8X8iQrqa",
+    "createdAt": "2025-10-22T00:03:31.621Z"
+  },
+  {
+    "id": 2,
+    "username": "wevertone",
+    "email": "produtora@rbformaturasff.com.br",
+    "passwordHash": "$2a$10$TDWD8QFZj8Ik2t.HpS6dC.XE/v96bciLf2BBNjG.D7iJ8JBwzPRDm",
+    "createdAt": "2025-10-22T00:11:19.303Z"
+  }
+]
