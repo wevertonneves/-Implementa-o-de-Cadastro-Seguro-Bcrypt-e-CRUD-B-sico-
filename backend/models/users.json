@@ -12,5 +12,19 @@
     "email": "produtora@rbformaturasff.com.br",
     "passwordHash": "$2a$10$TDWD8QFZj8Ik2t.HpS6dC.XE/v96bciLf2BBNjG.D7iJ8JBwzPRDm",
     "createdAt": "2025-10-22T00:11:19.303Z"
+  },
+  {
+    "id": 3,
+    "username": "gamby",
+    "email": "produtora@rbformaturass.com.br",
+    "passwordHash": "$2a$10$PlLZgrMidcbwclL6D.UzweR0Mghe0QGDPKhGMKSeKXD4aE8fIzlOe",
+    "createdAt": "2025-10-29T11:25:13.531Z"
+  },
+  {
+    "id": 4,
+    "username": "mari ",
+    "email": "mari@hotmail.com",
+    "passwordHash": "$2a$10$R3/VeAnNzWvV.WE100/tWOpcfCDnxNUdEMvgsahkk8P37no2B385u",
+    "createdAt": "2025-10-29T13:11:53.112Z"
   }
 ]
